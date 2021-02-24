@@ -15,7 +15,7 @@ server.use(middlewares);
 server.use('/api',router);
 server.use(router);
 
-server.listen(3000, () => {
+server.listen(process.env.PORT || 8081, () => {
   console.log('Json server is running');
 });
 
