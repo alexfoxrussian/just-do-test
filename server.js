@@ -12,13 +12,16 @@ const app = express();
 app.use(express.static('./dist/just-do-test'));
 
 server.use(middlewares);
+server.use(jsonServer.rewriter({'/api/*': '/$1'}));
 server.use(router);
 
-app.get('/*', function(req,res) {
+server.listen(process.env.PORT || 3000);
+app.use(server);
 
-  res.sendFile(path.join(__dirname,'/dist/just-do-tes/index.html'));
+app.get('/*', function (req, res) {
+
+  res.sendFile(path.join(__dirname, '/dist/just-do-tes/index.html'));
 });
 
 // Start the app by listening on the default Heroku port
 app.listen(process.env.PORT || 8080);
-server.listen(process.env.PORT || 3000);
