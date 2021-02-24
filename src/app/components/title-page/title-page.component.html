@@ -1,0 +1,88 @@
+<div class="title-page__wrapper">
+  <div class="title-page__background">
+    <div class="title-page__logo">
+      <svg height="131" viewBox="0 0 249 131" width="249" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <style>.a, .b {
+            fill: #fff;
+          }
+
+          .a {
+            font-size: 67px;
+            font-family: Comfortaa-Bold, Comfortaa;
+            font-weight: 700;
+          }</style>
+        </defs>
+        <g transform="translate(-196 -291)">
+          <text class="a" transform="translate(196 406)">
+            <tspan x="0" y="0">JustDo</tspan>
+          </text>
+          <circle class="b" cx="5.5" cy="5.5" r="5.5" transform="translate(425 336)"/>
+          <circle class="b" cx="8.5" cy="8.5" r="8.5" transform="translate(408 307)"/>
+          <circle class="b" cx="12.5" cy="12.5" r="12.5" transform="translate(368 291)"/>
+          <circle class="b" cx="17.5" cy="17.5" r="17.5" transform="translate(321 307)"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+  <div class="title-page__content">
+    <ng-template jdTitle></ng-template>
+
+    <div *ngIf="!isForgotPass" class="title-page__terms">
+      By accessing your account, you agree to our
+      <button (click)="toggleTerms()" class="button _link">Terms & Conditions</button>
+      and
+      <button (click)="togglePolicy()" class="button _link">Privacy Policy</button>
+    </div>
+  </div>
+</div>
+
+<div [class._hide]="!isShowTerms" class="additional-menu">
+  <div class="additional-menu__wrapper">
+    <button (click)="toggleTerms()" class="button _back-icon"></button>
+    <h1 class="additional-menu__title">Terms & Conditions</h1>
+    <span class="additional-menu__content">These terms and conditions («Terms», «Agreement») are an agreement between Mobile Application Developer («Mobile Application Developer», «us», «we» or «our») and you («User», «you» or «your»). This Agreement sets forth the general terms and conditions of your use of the Mentalstack mobile application and any of its products or services (collectively, «Mobile Application» or «Services»).</span>
+    <h3 class="additional-menu__caption">Accounts and membership</h3>
+    <span class="additional-menu__content">
+       You must be at least 13 years of age to use this Mobile Application.
+       By using this Mobile Application and by agreeing to this Agreement you warrant and represent that you are at least 13 years of age.
+       If you create an account in the Mobile Application, you are responsible for maintaining the security of your account and you are fully
+       responsible for all activities that occur under the account and any other actions taken in connection with it.
+       Providing false contact information of any kind may result in the termination of your account.
+       You must immediately notify us of any unauthorized uses of your account or any other breaches of security.
+       We will not be liable for any acts or omissions by you, including any damages of any kind incurred as a result of such acts or omissions.
+       We may suspend, disable, or delete your account (or any part thereof) if we determine
+       that you have violated any provision of this Agreement or that your conduct or content would tend to damage our reputation and goodwill.
+       If we delete your account for the foregoing reasons, you may not re-register for our Services.
+       We may block your email address and Internet protocol address to prevent further registration.
+    </span>
+    <h3 class="additional-menu__caption">User content</h3>
+    <span class="additional-menu__content">We do not own any data, information or material («Content») that you submit in the Mobile Application in the course of using the Service. You shall have sole responsibility for the accuracy, quality, integrity, legality, reliability, appropriateness, and intellectual property ownership or right to use of all submitted Content. We may, but have no obligation to, monitor Content in the Mobile Application submitted or created using our Services by you. Unless specifically permitted by you, your use of the Mobile Application does not grant us the license to use, reproduce, adapt, modify, publish or distribute the Content created by you or stored in your user account for commercial, marketing or any similar purpose. But you grant us permission to access, copy, distribute, store, transmit, reformat, display and perform the Content of your user account solely as required for the purpose of providing the Services to you.</span>
+  </div>
+</div>
+
+<div [class._hide]="!isShowPolicy" class="additional-menu">
+  <div class="additional-menu__wrapper">
+    <button (click)="togglePolicy()" class="button _back-icon"></button>
+    <h1 class="additional-menu__title">Privacy Policy</h1>
+    <span class="additional-menu__content">
+      My Company (change this) («us», «we», or «our») operates http://www.mysite.com (change this) (the «Site»).
+      This page informs you of our policies regarding the collection, use and disclosure of Personal Information we receive from users of the Site.
+      We use your Personal Information only for providing and improving the Site.
+      By using the Site, you agree to the collection and use of information in accordance with this policy.
+    </span>
+    <h3 class="additional-menu__caption">Information Collection And Use </h3>
+    <span class="additional-menu__content">
+      While using our Site, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you.
+      Personally identifiable information may include, but is not limited to your name («Personal Information»).
+    </span>
+    <h3 class="additional-menu__caption">Log Data</h3>
+    <span class="additional-menu__content">
+      Like many site operators, we collect information that your browser sends whenever you visit our Site («Log Data»). This Log Data may include information such as your computer’s Internet Protocol («IP») address, browser type, browser version, the pages of our Site that you visit, the time and date of your visit, the time spent on those pages and other statistics. In addition, we may use third party services such as Google Analytics that collect, monitor and analyze this …
+    </span>
+    <h3 class="additional-menu__caption">Communications</h3>
+    <span class="additional-menu__content">
+      We may use your Personal Information to contact you with newsletters, marketing or promotional materials and other information that …
+    </span>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+@import "src/assets/less/fonts";
+@import "src/assets/less/colors";
+
+.sign-up {
+
+  flex-grow: 1;
+  margin-top: 100px;
+  padding: 0 24px;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 50vh;
+  }
+
+  &__title {
+    text-align: center;
+    .font-bold();
+    font-size: 24px;
+    line-height: 27px;
+    color: @color-black;
+    padding-bottom: 80px;
+  }
+
+  & .button._primary {
+    margin-top: 84px;
+  }
+
+  &__account {
+    margin-top: 35px;
+    color: @color-light-grey;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 768px) {
+    &__title {
+      padding-top: 18px;
+    }
+  }
+}
