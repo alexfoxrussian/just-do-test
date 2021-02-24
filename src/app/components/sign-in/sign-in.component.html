@@ -28,7 +28,12 @@
       </div>
     </div>
     <button (click)="onForgotPassword()" class="form__forgotPass button _link">Forgot password?</button>
-    <button [disabled]="!authorizationForm.valid" class="button _primary" type="submit" [routerLink]="'/todos'">Sign In</button>
+    <button [disabled]="!authorizationForm.valid"
+            class="button _primary"
+            routerLink="/todos"
+            routerLinkActive="active"
+            type="submit">Sign In
+    </button>
   </form>
   <button (click)="onSignUpClick()" class="button _link">Sign Up</button>
 </div>
