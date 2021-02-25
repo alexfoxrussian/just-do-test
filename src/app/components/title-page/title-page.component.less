@@ -53,6 +53,7 @@
     &__background {
       background: @color-light-blue url("src/assets/images/bg.png") no-repeat;
       background-size: cover;
+      width: 100%;
     }
 
     &__logo {
@@ -97,6 +98,16 @@
   & .button._back-icon {
     position: absolute;
     top: 83px;
+  }
+  @media screen and (max-width: 768px){
+    left:0;
+    padding: 30px;
+    overflow-y: scroll;
+
+    & .button._back-icon {
+      position: absolute;
+      top: 40px;
+    }
   }
 }
 
