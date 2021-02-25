@@ -5,6 +5,7 @@ import {BaseFormComponent} from "../../utils/base-form.component";
 import {TitlePageEnum} from "../../enums/title-page.enum";
 import {AuthorizationService} from "../../services/authorization.service";
 import {UserType} from "../../models/user.type";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'jd-sign-in',
@@ -23,7 +24,7 @@ export class SignInComponent extends BaseFormComponent implements OnInit {
   @Output()
   public forgotPass: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor(private authService: AuthorizationService) {
+  constructor(private authService: AuthorizationService, private router: Router) {
     super();
     this.authorizationForm = new FormBuilder().group({
       email: ['', [Validators.required, Validators.email]],
@@ -50,7 +51,7 @@ export class SignInComponent extends BaseFormComponent implements OnInit {
       console.log("Response",response);
       if(response.password === this.authorizationForm.value.password){
         localStorage.setItem("loggedIn","true");
-        window.location.href = "/todos";
+        this.router.navigate(['/todos']);
       } else {
         alert("Wrong password");
       }

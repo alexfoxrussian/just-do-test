@@ -1,4 +1,5 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'jd-todos',
@@ -9,7 +10,7 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 })
 export class TodosComponent implements OnInit {
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   ngOnInit(): void {
@@ -17,7 +18,7 @@ export class TodosComponent implements OnInit {
 
   public onClick() {
     localStorage.removeItem("loggedIn");
-    window.location.href = "";
+    this.router.navigate(['/']);
   }
 
 }
