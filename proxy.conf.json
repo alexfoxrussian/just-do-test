@@ -1,9 +1,5 @@
 {
   "/api": {
-    "target": "https://just-do-app.herokuapp.com",
-    "pathRewrite": {
-      "^/api": ""
-    },
-    "changeOrigin": true
+    "target": "http://localhost:3000"
   }
 }

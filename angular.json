@@ -66,8 +66,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "just-do-test:build",
-            "proxyConfig": "proxy.conf.json"
+            "browserTarget": "just-do-test:build"
           },
           "configurations": {
             "production": {
@@ -124,6 +123,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "just-do-test"
 }

@@ -1,28 +1,30 @@
+const { Router } = require('express');
+const usersRepository = require('./server/repositories/users.repository');
+
 const express = require('express');
 const path = require('path');
-const jsonServer = require('json-server');
-const server = jsonServer.create();
-const router = jsonServer.router('./server/mocks/users.mock.json');
-const middlewares = jsonServer.defaults();
-
-
+const controllers = require('./server/controllers/users.controller')
 const app = express();
 
 // Serve only the static files form the dist directory
 app.use(express.static('./dist/just-do-test'));
 
-server.use(middlewares);
-server.use('/api',router);
-server.use(router);
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+// app.use(controllers);
 
-server.listen(3000, () => {
-  console.log('Json server is running');
+
+const router = new Router();
+
+router.get('/', async (_request, response) => {
+  const users = await usersRepository.getAll();
+  response.json(users);
 });
 
-app.get('/*', function (req, res) {
-
-  res.sendFile(path.join(__dirname, '/dist/just-do-test/index.html'));
-});
+// app.get('/*', function (req, res) {
+//
+//   res.sendFile(path.join(__dirname, '/dist/just-do-test/index.html'));
+// });
 
 // Start the app by listening on the default Heroku port
-app.listen(process.env.PORT || 8080);
+app.listen(8080);
