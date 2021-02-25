@@ -8,7 +8,7 @@ router.get('/', async (_request, response) => {
   response.json(users);
 });
 
-router.get('/:id', async(request, response) => {
+router.get('/:email', async(request, response) => {
   const user = await usersRepository.get(request.params.email);
   if (user) {
     response.json(user);

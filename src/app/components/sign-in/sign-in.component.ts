@@ -46,15 +46,14 @@ export class SignInComponent extends BaseFormComponent implements OnInit {
     this.authService.getAccount({
       email: this.authorizationForm.value.email,
       password: this.authorizationForm.value.password
-    }).subscribe((response) => {
-
+    }).subscribe((response:UserType) => {
       console.log("Response",response);
-      // if(users[0].password === this.authorizationForm.value.password){
-      //   localStorage.setItem("loggedIn","true");
-      //   window.location.href = "/todos";
-      // } else {
-      //   alert("Wrong password");
-      // }
+      if(response.password === this.authorizationForm.value.password){
+        localStorage.setItem("loggedIn","true");
+        window.location.href = "/todos";
+      } else {
+        alert("Wrong password");
+      }
     });
   }
 

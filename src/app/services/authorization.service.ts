@@ -15,8 +15,6 @@ export class AuthorizationService {
   }
 
   public getAccount(user: UserType) {
-    return this.http.get('/api/users', {
-      params: {email: user.email}
-    });
+    return this.http.get(`/api/users/${user.email}`);
   }
 }
