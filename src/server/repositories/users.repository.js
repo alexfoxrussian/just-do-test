@@ -2,7 +2,7 @@ const path = require('path');
 const uuid = require('uuid');
 const { readJsonFile, writeJsonFile } = require('../utils/file.utils');
 
-const FILE_PATH = path.resolve(path.dirname(require.main.filename), '..', 'data', 'users.json');
+const FILE_PATH = path.resolve(path.dirname(require.main.filename),'src', 'server', 'data', 'users.json');
 
 const usersRepository = {
 
