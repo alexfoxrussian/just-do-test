@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "json-server": "json-server --watch src/assets/mocks/users.mock.json --routes server/api.routes.json --no-cors=true",
+    "json-server": "json-server --watch src/assets/mocks/users.mock.json --routes src/server/api.routes.json --no-cors=true",
     "postinstall": "ng build --prod"
   },
   "private": true,

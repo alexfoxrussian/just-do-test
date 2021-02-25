@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
-const requestLogger = require('./server/middlewares/request-logger.middleware');
-const controllers = require('./server/controllers/index')
+const requestLogger = require('./src/server/middlewares/request-logger.middleware');
+const controllers = require('./src/server/controllers/index')
 const app = express();
 
 // Serve only the static files form the dist directory
